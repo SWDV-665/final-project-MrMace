@@ -19,4 +19,7 @@ export class NewsApiService {
     return this.http.get(`${this.baseUrl}/top-headlines?apiKey=${this.apiKey}&country=${countryCode}&q=${termCode}`);
 
   }
+  getPublisherTopHeadline(publisherCode:string, termCode:string){
+    return this.http.get(`${this.baseUrl}/top-headlines?apiKey=${this.apiKey}&sources=${publisherCode}&q=${termCode}`)
+  }
 }
